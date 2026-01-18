@@ -29,7 +29,11 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: "k8s-getsecret"
+  # The name of the role associated with the service account
+  roleName: "secret-reader"
+  # The name of the role binding for the service account
+  roleBindingName: "read-secrets-binding"
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/

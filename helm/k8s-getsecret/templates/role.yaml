@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: {{ .Values.global.namespaceOverride | default .Release.Namespace }}
+  name: {{ .Values.serviceAccount.roleName | default "secret-reader" }}
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ .Values.serviceAccount.roleBindingName | default "read-secrets-binding" }}
+  namespace: {{ .Values.global.namespaceOverride | default .Release.Namespace }}
+subjects:
+- kind: ServiceAccount
+  name: {{ .Values.serviceAccount.name | default "k8s-getsecret" }}
+  namespace: {{ .Values.global.namespaceOverride | default .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ .Values.serviceAccount.roleName | default "secret-reader" }}
+  apiGroup: rbac.authorization.k8s.io
