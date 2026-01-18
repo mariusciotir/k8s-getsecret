@@ -26,4 +26,4 @@ COPY --from=builder /app/k8s-getsecret /k8s-getsecret
 # COPY kubeconfig /root/.kube/config
 
 # Run the application
-CMD ["/k8s-getsecret"]
+ENTRYPOINT ["/k8s-getsecret"]
