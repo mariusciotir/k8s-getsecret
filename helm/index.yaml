@@ -3,12 +3,12 @@ entries:
   k8s-getsecret:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-01-18T20:45:11.429306+02:00"
+    created: "2026-01-18T20:56:01.90414+02:00"
     description: A Helm chart for Kubernetes
     digest: 93e06260e576310bdbd3e6c68c872779277de66daeaee25da0ec30f9bdc7c7a5
     name: k8s-getsecret
     type: application
     urls:
-    - k8s-getsecret-0.1.0.tgz
+    - https://mariusciotir.github.io/k8s-getsecret/helm/k8s-getsecret-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-18T20:45:11.428487+02:00"
+generated: "2026-01-18T20:56:01.903886+02:00"
