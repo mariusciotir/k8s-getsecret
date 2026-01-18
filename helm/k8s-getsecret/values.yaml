@@ -9,7 +9,7 @@ replicaCount: 1
 image:
   repository: fra.ocir.io/frvkqml7frsy/k8s-getsecret
   # This sets the pull policy for images.
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "amd64"
 

@@ -1,14 +1,14 @@
 version: '3'
 
 tasks:
-  kind-create:
+  build:
     desc: Build image
     cmds: 
     - podman manifest create k8s-getsecret
-    - podman build --arch=amd64 -f Containerfile -t fra.ocir.io/frvkqml7frsy/k8s-getsecret:amd64
-    - podman manifest add k8s-getsecret fra.ocir.io/frvkqml7frsy/k8s-getsecret:amd64
-    - podman build --arch=arm64 -f Containerfile -t fra.ocir.io/frvkqml7frsy/k8s-getsecret:arm64
-    - podman manifest push k8s-getsecret fra.ocir.io/frvkqml7frsy/k8s-getsecret:0.2
+    - podman build --arch=amd64 -f Containerfile -t fra.ocir.io/frvkqml7frsy/k8s-getsecret:1.16.0
+    - podman manifest add k8s-getsecret fra.ocir.io/frvkqml7frsy/k8s-getsecret:1.16.0
+    # - podman build --arch=arm64 -f Containerfile -t fra.ocir.io/frvkqml7frsy/k8s-getsecret:arm64
+    # - podman manifest push k8s-getsecret fra.ocir.io/frvkqml7frsy/k8s-getsecret:0.2
     ignore_error: false
   kind-destroy:
     desc: Destroys kind cluster
